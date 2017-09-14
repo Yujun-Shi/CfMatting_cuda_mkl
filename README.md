@@ -19,4 +19,10 @@ Second, the project is usable with a stuning result.
 
 Third, this code is hard coded for the window size 3 x 3 when getting matting laplacian matrix since kernel/device function can't allocate dynamic memory.
 
+
+performance:
+
+the process time of a 400*600 image on my humble machine with intel i7-7700HQ and GTX1060 is about 3.9 seconds. the actual run time may be longer since we have to initialize the device context at the begining.
+
+
 Original authors: Anat Levin (anat.levin@weizmann.ac.il)
