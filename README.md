@@ -1,4 +1,4 @@
-# CfMatting_cuda_mkl
+# A closed-form solution to natrual image matting(Optimized by cuda and mkl)
 Implementation of A. Levin D. Lischinski and Y. Weiss. A Closed Form Solution to Natural Image Matting. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR), June 2006, New York with the help of nvidia cuda and intel mkl.
 
 I ran the code on my own laptop with:
