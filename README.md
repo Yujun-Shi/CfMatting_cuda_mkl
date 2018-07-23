@@ -26,7 +26,7 @@ cuda 8.0
 
 <br>
 
-####For Linux User
+For Linux User
 
 First, compile the code with the following command line.
 
@@ -46,7 +46,7 @@ Second, execute the code with the following command line.
 
 <br>
 
-####For Windows User
+For Windows User
 
 First, set the compile mode to Release and x64 (default is debug and x86).
 
@@ -62,7 +62,7 @@ CfMatting /path/to/original_image /path/to/labeled_image /path/to/results
 
 <br>
 
-####Example Results
+Example Results
 
 <img src="images/teddy.bmp" style="zoom:40%"> + <img src="images/teddy_m.bmp" style="zoom:40%"> = <img src="images/teddy_matte.png" style="zoom:40%">
 
