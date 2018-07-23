@@ -1,28 +1,76 @@
 # A closed-form solution to natrual image matting(Optimized by cuda and mkl)
+
 Implementation of A. Levin D. Lischinski and Y. Weiss. A Closed Form Solution to Natural Image Matting. IEEE Conf. on Computer Vision and Pattern Recognition (CVPR), June 2006, New York with the help of nvidia cuda and intel mkl.
 
-I ran the code on my own laptop with:
+The code is tested on my laptop with the following configurations:
 
-visual studio 2015
+cpu: intel i7-7700HQ
+
+gpu: GTX1060
+
+windows configuration:
+
+windows 10
+
+visual studio: vs2015
 
 cuda 8.0
 
-mkl 2017.3.210
+linux configuration:
 
-opencv 3.2.0
+ubuntu 16.04
 
+g++ 5.4.0
 
-note: 
-First, apologize for the terrible coding style.
+cuda 8.0
 
-Second, the project is usable with a stuning result.
+<br>
 
-Third, this code is hard coded for the window size 3 x 3 when getting matting laplacian matrix since kernel/device function can't allocate dynamic memory.
+####For Linux User
 
+First, compile the code with the following command line.
 
-performance:
+```bash
+cd linux
+mkdir build
+cd build
+cmake ..
+make
+```
 
-the process time of a 400*600 image on my humble machine with intel i7-7700HQ and GTX1060 is about 3.9 seconds. the actual run time may be longer since we have to initialize the device context at the begining.
+Second, execute the code with the following command line.
 
+```bash
+./CfMatting /path/to/original_image /path/to/labeled_image /path/to/results
+```
 
-Original authors: Anat Levin (anat.levin@weizmann.ac.il)
+<br>
+
+####For Windows User
+
+First, set the compile mode to Release and x64 (default is debug and x86).
+
+Second, set up include path and library path for opencv & mkl, specify opencv & mkl static library in linker.
+
+Third, compile the code
+
+Fourth, execute the code in following command line.
+
+```
+CfMatting /path/to/original_image /path/to/labeled_image /path/to/results
+```
+
+<br>
+
+####Example Results
+
+<img src="images/teddy.bmp" style="zoom:40%"> + <img src="images/teddy_m.bmp" style="zoom:40%"> = <img src="images/teddy_matte.png" style="zoom:40%">
+
+image resolution: 416*486
+
+linux execution time: ~1.16s
+
+windows execution time: ~1.90s
+
+(Note: I didn't use the down-sample trick to speed up the calculation)
+
